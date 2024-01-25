@@ -1,4 +1,4 @@
-## sni proxy testing container
+# sni proxy testing container
 
 this sni proxy is intended for use for testing applications that depend on an sni proxy to reach the public internet
 
@@ -21,3 +21,7 @@ to test from cluster, after deploying sni proxy to cluster
 ```
 k exec <pod-name> -- curl -H "host: globalcatalog.cloud.ibm.com" --resolve globalcatalog.cloud.ibm.com:18443:<sni-proxy-svc-ip> https://globalcatalog.cloud.ibm.com:18443/healthcheck
 ```
+
+### golang example
+
+go [here](https://github.ibm.com/jon-ibm/sni-proxy-client-go) to see example golang code to route a request through the proxy
