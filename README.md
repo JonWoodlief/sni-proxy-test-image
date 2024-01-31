@@ -12,16 +12,16 @@ docker run -p 18443:18443 jon/nginx
 to test from localhost
 
 ```
-curl -k --ipv4 -v -H "host: globalcatalog.cloud.ibm.com" --resolve globalcatalog.cloud.ibm.com:18443:127.0.0.1 https://globalcatalog.cloud.ibm.com:18443/healthcheck
+curl -k --ipv4 -v -H "host: ibm.com" --resolve ibm.com:18443:127.0.0.1 https://ibm.com:18443/healthcheck
 ```
 
 
 to test from cluster, after deploying sni proxy to cluster
 
 ```
-k exec <pod-name> -- curl -H "host: globalcatalog.cloud.ibm.com" --resolve globalcatalog.cloud.ibm.com:18443:<sni-proxy-svc-ip> https://globalcatalog.cloud.ibm.com:18443/healthcheck
+k exec <pod-name> -- curl -H "host: ibm.com" --resolve ibm.com:18443:<sni-proxy-svc-ip> https://ibm.com:18443/healthcheck
 ```
 
 ### golang example
 
-go [here](https://github.ibm.com/jon-ibm/sni-proxy-client-go) to see example golang code to route a request through the proxy
+go [here](https://github.com/jonwoodlief/sniproxy-client-go) to see example golang code to route a request through the proxy
